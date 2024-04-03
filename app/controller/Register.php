@@ -12,11 +12,11 @@ class Register extends Controller
     public function tambah()
     {
         if ($this->model("User_model")->tambahUser($_POST) > 0) {
-            Flasher::setFlash('Berhasil', 'Register', 'success');
+            Flasher::setFlash('Success', 'Register', 'success');
             header("Location: " . BASEURL . "/login");
             exit;
         } else {
-            Flasher::setFlash('Gagal', 'Register', 'danger');
+            Flasher::setFlash('Failed', 'Register', 'danger');
             header("Location: " . BASEURL . "/register");
             exit;
         }

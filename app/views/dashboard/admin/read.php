@@ -33,7 +33,7 @@ if (isset($_SESSION['flash'])) {
                         <td><?= $category['name']; ?></td>
                         <td class="text-center">
                         <a href="<?= BASEURL; ?>/admin/category_edit/<?= $category['id']; ?>" class="badge bg-warning tampilModalUbah" data-bs-toggle="modal" data-bs-target="#tambahCategory" data-id="<?= $category['id']; ?>"><i class="bi bi-pencil-square"></i></a>
-                            <a href="<?= BASEURL; ?>/admin/delete/<?= $category['id']; ?>" class="badge bg-danger border-0 tombol-hapus"><i class="bi bi-x-circle"></i></a>
+                            <a href="<?= BASEURL; ?>/admin/delete/<?= $category['id']; ?>" class="badge bg-danger border-0 tombol-hapus" data-pesan="Deleting a category will delete all posts based on that category"><i class="bi bi-x-circle"></i></a>
                         </td>
                     </tr>
                     <?php $i++; ?>

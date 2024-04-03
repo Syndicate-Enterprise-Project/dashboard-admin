@@ -20,7 +20,7 @@ use Carbon\Carbon; ?>
         <?php $datetime = Carbon::parse($data['posts'][0]['created_at'], "Asia/Singapore"); ?>
         <div class="card mb-3 text-center">
             <?php if (!$data['posts'][0]['image'] == '') : ?>
-                <img src="<?= BASEURL; ?>/img/upload/<?= $data['posts'][0]['image']; ?>" class="img-fluid" alt="Not Found">
+                <img src="<?= BASEURL; ?>/img/upload/<?= $data['posts'][0]['image']; ?>" class="img-fluid" alt="Not Found" style="width: 1200px; height: 400px; object-fit: cover;">
             <?php else : ?>
                 <img src="https://source.unsplash.com/1200x400/?<?= $data['posts'][0]['category_name']; ?>" class="card-img-top" alt="Not Found">
             <?php endif; ?>
@@ -29,7 +29,7 @@ use Carbon\Carbon; ?>
                 <p> <small class="text-body-secondary"> By. <a href="<?= BASEURL; ?>/posts/author/<?= $data['posts'][0]['author_name']; ?>" class="text-decoration-none"><?= $data['posts'][0]['author_name']; ?></a>
                         in <a href="<?= BASEURL; ?>/posts/category/<?= $data['posts'][0]['category_name']; ?>" class="text-decoration-none"><?= $data['posts'][0]['category_name']; ?></a>
                         <?= $datetime->diffForHumans(); ?></small></p>
-                <p class="card-text"><?= $data['posts'][0]['excerpt']; ?>.</p>
+                <p class="card-text"><?= $data['posts'][0]['excerpt']; ?></p>
                 <a href="<?= BASEURL; ?>/posts/show/<?= $data['posts'][0]['id']; ?>" class="text-decoration-none btn btn-primary">Read more...</a>
             </div>
         </div>

@@ -45,7 +45,7 @@ if (isset($_SESSION['flash'])) {
                         <?php endif; ?>
                         <td class="text-center">
                             <a href="<?= BASEURL; ?>/superadmin/update" class="badge bg-warning tampilModalUbahAkun" data-bs-toggle="modal" data-bs-target="#tambahAkun" data-id="<?= $account['id']; ?>"><i class="bi bi-pencil-square"></i></a>
-                            <a href="<?= BASEURL; ?>/superadmin/delete/<?= $account['id']; ?>" class="badge bg-danger border-0 tombol-hapus"><i class="bi bi-x-circle"></i></a>
+                            <a href="<?= BASEURL; ?>/superadmin/delete/<?= $account['id']; ?>" class="badge bg-danger border-0 tombol-hapus" data-pesan="Deleting an account will delete all posts based on that account"><i class="bi bi-x-circle"></i></a>
                         </td>
                     </tr>
                     <?php $i++; ?>

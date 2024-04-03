@@ -21,7 +21,7 @@ class Post_model
     }
     public function getAllPostByUserId($id)
     {
-        $this->db->query("SELECT posts.*, categories.name 
+        $this->db->query("SELECT posts.*, categories.name AS category_name
         FROM posts 
         INNER JOIN categories ON posts.category_id = categories.id
         WHERE posts.user_id = $id
@@ -104,6 +104,20 @@ class Post_model
         $this->db->execute();
         return $this->db->rowCount();
     }
+    
+    public function deleteUserPost($id)
+    {
+        $this->db->query("DELETE FROM {$this->table} WHERE user_id = $id");
+        $this->db->execute();
+        return $this->db->rowCount();
+    }
+    
+    public function deletePostByCategory($id)
+    {
+        $this->db->query("DELETE FROM {$this->table} WHERE category_id = $id");
+        $this->db->execute();
+        return $this->db->rowCount();
+    }
 
     public function searchPost($keyword)
     {
@@ -127,11 +141,11 @@ class Post_model
         $ektensiGambar = strtolower(end($ektensiGambar));
 
         if (!in_array($ektensiGambar, $ekstensiGambarValid)) {
-            Flasher::setFlash("Error", "Ekstensi gambar tidak valid", "error");
+            Flasher::setFlash("Failed", "Invalid image extension", "error");
             return header('Location: ' . BASEURL . '/dashboard/posts');
         }
         if ($ukuranFile >= 5000000) {
-            Flasher::setFlash("Error", "Ukuran gambar melebihi 5 mb", "error");
+            Flasher::setFlash("Failed", "Image size exceeds 5 mb", "error");
             return header("Location: " . BASEURL . "/dashboard/posts");
         }
 

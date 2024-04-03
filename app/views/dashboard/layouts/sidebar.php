@@ -13,7 +13,11 @@
         <li>
             <a href="<?= BASEURL; ?>/dashboard/posts" class="nav-link <?= end(explode('/', $_SERVER['REQUEST_URI'])) == 'posts' ? 'active' : ''; ?> text-white">
                 <i class="bi bi-file-post me-2"></i>
-                My Posts
+                <?php if ($_SESSION['user_auth']['is_admin'] === 1 or $_SESSION['user_auth']['is_admin'] === 2) : ?>
+                    User Posts
+                <?php else : ?>
+                    My Posts
+                <?php endif; ?>
             </a>
         </li>
         <?php if ($_SESSION['user_auth']['is_admin'] === 1 or $_SESSION['user_auth']['is_admin'] === 2) : ?>
@@ -30,7 +34,7 @@
             <li>
                 <a href="<?= BASEURL; ?>/superadmin/users_account" class="nav-link <?= end(explode('/', $_SERVER['REQUEST_URI'])) == 'users_account' ? 'active' : ''; ?> text-white">
                     <i class="bi bi-people-fill me-2"></i>
-                     User Account
+                    User Account
                 </a>
             </li>
         <?php endif; ?>

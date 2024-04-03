@@ -17,12 +17,21 @@ class Dashboard extends Controller
 
     public function posts()
     {
-        $data['judul'] = "My Posts";
-        $data['posts'] = $this->model('Post_model')->getAllPostByUserId($_SESSION['user_auth']['id']);
-        $this->view('dashboard/layouts/header', $data);
-        $this->view('dashboard/layouts/sidebar');
-        $this->view('dashboard/post/read', $data);
-        $this->view('templates/footer');
+        if ($_SESSION['user_auth']['is_admin'] === 1 or $_SESSION['user_auth']['is_admin'] === 2) {
+            $data['judul'] = "User Posts";
+            $data['posts'] = $this->model('Post_model')->getAllPost();
+            $this->view('dashboard/layouts/header', $data);
+            $this->view('dashboard/layouts/sidebar');
+            $this->view('dashboard/post/read', $data);
+            $this->view('templates/footer');
+        } else {
+            $data['judul'] = "My Posts";
+            $data['posts'] = $this->model('Post_model')->getAllPostByUserId($_SESSION['user_auth']['id']);
+            $this->view('dashboard/layouts/header', $data);
+            $this->view('dashboard/layouts/sidebar');
+            $this->view('dashboard/post/read', $data);
+            $this->view('templates/footer');
+        }
     }
 
     public function post_create()
@@ -38,11 +47,11 @@ class Dashboard extends Controller
     public function create()
     {
         if ($this->model("Post_model")->tambahPost($_POST) > 0) {
-            Flasher::setFlash('berhasil', 'ditambahkan', 'success');
+            Flasher::setFlash('Success', 'Post Uploaded', 'success');
             header("Location: " . BASEURL . "/dashboard/posts");
             exit;
         } else {
-            Flasher::setFlash('gagal', 'ditambahkan', 'danger');
+            Flasher::setFlash('Failed', 'Upload Failed', 'danger');
             header("Location: " . BASEURL . "/dashboard/posts");
             exit;
         }
@@ -71,13 +80,12 @@ class Dashboard extends Controller
 
     public function update()
     {
-        // var_dump($_POST);var_dump($_FILES);exit();
         if ($this->model("Post_model")->updatePost($_POST) > 0) {
-            Flasher::setFlash('berhasil', 'mengubah', 'success');
+            Flasher::setFlash('Success', 'Post Updated', 'success');
             header("Location: " . BASEURL . "/dashboard/posts");
             exit;
         } else {
-            Flasher::setFlash('gagal', 'mengubah', 'danger');
+            Flasher::setFlash('Failed', 'Update Post', 'danger');
             header("Location: " . BASEURL . "/dashboard/posts");
             exit;
         }
@@ -86,11 +94,11 @@ class Dashboard extends Controller
     public function delete($id)
     {
         if ($this->model("Post_model")->deletePost($id) > 0) {
-            Flasher::setFlash('berhasil', 'menghapus', 'success');
+            Flasher::setFlash('Success', 'Post Deleted', 'success');
             header("Location: " . BASEURL . "/dashboard/posts");
             exit;
         } else {
-            Flasher::setFlash('gagal', 'menghapus', 'danger');
+            Flasher::setFlash('Failed', 'Delete Post', 'danger');
             header("Location: " . BASEURL . "/dashboard/posts");
             exit;
         }

@@ -36,12 +36,12 @@ class Login extends Controller
                     'email' => $user['email'],
                     'is_admin' => $user['is_admin']
                 ];
-                Flasher::setFlash("Berhasil", "Login", "success");
+                Flasher::setFlash("Success", "Login", "success");
                 header('Location: ' . BASEURL . '/dashboard');
                 exit();
             }
         }
-        Flasher::setFlash("Gagal Login", "password / username anda salah", "error");
+        Flasher::setFlash("Login Failed", "password / username is incorrect", "error");
         header('Location: ' . BASEURL . '/login');
         exit();
     }

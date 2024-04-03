@@ -31,13 +31,18 @@ class SuperAdmin extends Controller
 
     public function delete($id)
     {
-
-        if ($this->model('User_model')->deleteAccount($id) > 0) {
-            Flasher::setFlash('Success', ' Account Deleted', 'success');
-            header("Location: " . BASEURL . "/superadmin/users_account");
-            exit;
+        if ($this->model('Post_model')->deleteUserPost($id) >= 0) {
+            if ($this->model('User_model')->deleteAccount($id) > 0) {
+                Flasher::setFlash('Success', ' Account Deleted', 'success');
+                header("Location: " . BASEURL . "/superadmin/users_account");
+                exit;
+            } else {
+                Flasher::setFlash('Failed', ' Delete Category', 'error');
+                header("Location: " . BASEURL . "/superadmin/users_account");
+                exit;
+            }
         } else {
-            Flasher::setFlash('Failed', ' Delete Category', 'error');
+            Flasher::setFlash('Failed', ' Delete User Posts', 'error');
             header("Location: " . BASEURL . "/superadmin/users_account");
             exit;
         }

@@ -1,6 +1,6 @@
 <div class="mt-5" style="margin-left: 67px; margin-right: 67px;">
     <div class="d-flex justify-content-center">
-        <h1 class="mb-4">Selamat Datang di Website Sistem Informasi</h1>
+        <h1 class="mb-4">Selamat Datang di Website Blog Posts</h1>
     </div>
     <div class="d-flex flex-column">
         <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">

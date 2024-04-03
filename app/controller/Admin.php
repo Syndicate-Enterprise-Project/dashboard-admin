@@ -31,13 +31,18 @@ class admin extends Controller
 
     public function delete($id)
     {
-
-        if ($this->model('Category_model')->deleteCategory($id) > 0) {
-            Flasher::setFlash('Success', ' Category Deleted', 'success');
-            header("Location: " . BASEURL . "/admin/category");
-            exit;
+        if ($this->model('Post_model')->deletePostByCategory($id) >= 0) {
+            if ($this->model('Category_model')->deleteCategory($id) > 0) {
+                Flasher::setFlash('Success', ' Category Deleted', 'success');
+                header("Location: " . BASEURL . "/admin/category");
+                exit;
+            } else {
+                Flasher::setFlash('Failed', ' Delete Category', 'error');
+                header("Location: " . BASEURL . "/admin/category");
+                exit;
+            }
         } else {
-            Flasher::setFlash('Failed', ' Delete Category', 'error');
+            Flasher::setFlash('Failed', ' Delete User Posts', 'error');
             header("Location: " . BASEURL . "/admin/category");
             exit;
         }
