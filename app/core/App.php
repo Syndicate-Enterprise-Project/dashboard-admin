@@ -1,11 +1,7 @@
 <?php
 class App
 {
-<<<<<<< HEAD
     protected $controller = 'Login';
-=======
-    protected $controller = 'Home';
->>>>>>> 552b67389f2338092cbefe82d1af8844dc15537d
     protected $method = 'index';
     protected $params = [];
 

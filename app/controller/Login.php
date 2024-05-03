@@ -1,18 +1,10 @@
 <?php
 class Login extends Controller
 {
-<<<<<<< HEAD
     // public function __construct()
     // {
     //     Authenticate::guest();
     // }
-=======
-
-    public function __construct()
-    {
-        Authenticate::guest();
-    }
->>>>>>> 552b67389f2338092cbefe82d1af8844dc15537d
     public function index()
     {
         $data['judul'] = 'Login';
