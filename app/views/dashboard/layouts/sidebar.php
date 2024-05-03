@@ -11,6 +11,7 @@
             </a>
         </li>
         <li>
+<<<<<<< HEAD
             <a href="<?= BASEURL; ?>/Statistik" class="nav-link <?= end(explode('/', $_SERVER['REQUEST_URI'])) == 'Statistik' ? 'active' : ''; ?> text-white">
                 <i class="bi bi-file-post me-2"></i>
                 Statistik
@@ -34,6 +35,36 @@
                 Account
             </a>
         </li>
+=======
+            <a href="<?= BASEURL; ?>/dashboard/posts" class="nav-link <?= end(explode('/', $_SERVER['REQUEST_URI'])) == 'posts' ? 'active' : ''; ?> text-white">
+                <i class="bi bi-file-post me-2"></i>
+                <?php if ($_SESSION['user_auth']['is_admin'] === 1 or $_SESSION['user_auth']['is_admin'] === 2) : ?>
+                    User Posts
+                <?php else : ?>
+                    My Posts
+                <?php endif; ?>
+            </a>
+        </li>
+        <?php if ($_SESSION['user_auth']['is_admin'] === 1 or $_SESSION['user_auth']['is_admin'] === 2) : ?>
+            <hr>
+            <li>
+                <a href="<?= BASEURL; ?>/admin/category" class="nav-link <?= end(explode('/', $_SERVER['REQUEST_URI'])) == 'category' ? 'active' : ''; ?> text-white">
+                    <i class="bi bi-bookmark-dash-fill me-2"></i>
+                    Category
+                </a>
+            </li>
+        <?php endif; ?>
+        <?php if ($_SESSION['user_auth']['is_admin'] === 2) : ?>
+            <hr>
+            <li>
+                <a href="<?= BASEURL; ?>/superadmin/users_account" class="nav-link <?= end(explode('/', $_SERVER['REQUEST_URI'])) == 'users_account' ? 'active' : ''; ?> text-white">
+                    <i class="bi bi-people-fill me-2"></i>
+                    User Account
+                </a>
+            </li>
+        <?php endif; ?>
+
+>>>>>>> 552b67389f2338092cbefe82d1af8844dc15537d
     </ul>
     <hr>
     <div class="dropdown">
