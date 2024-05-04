@@ -22,9 +22,8 @@ if (isset($_SESSION['flash'])) {
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col">Name</th>
-                    <th scope="col">Username</th>
+                    <th scope="col">Phone Number</th>
                     <th scope="col">Email</th>
-                    <th scope="col">Role</th>
                     <th scope="col" class="text-center">Action</th>
                 </tr>
             </thead>
@@ -33,19 +32,12 @@ if (isset($_SESSION['flash'])) {
                 <?php foreach ($data['accounts'] as $account) : ?>
                     <tr>
                         <td><?= $i; ?></td>
-                        <td><?= $account['name']; ?></td>
-                        <td><?= $account['username']; ?></td>
-                        <td><?= $account['email']; ?></td>
-                        <?php if ($account['is_admin'] === 1) : ?>
-                            <td>Admin</td>
-                        <?php elseif ($account['is_admin'] === 2) : ?>
-                            <td>Super Admin</td>
-                        <?php else : ?>
-                            <td>User</td>
-                        <?php endif; ?>
+                        <td><?= $account['nama_pegawai']; ?></td>
+                        <td><?= $account['hp_pegawai']; ?></td>
+                        <td><?= $account['email_pegawai']; ?></td>
                         <td class="text-center">
-                            <a href="<?= BASEURL; ?>/account/update" class="badge bg-warning tampilModalUbahAkun" data-bs-toggle="modal" data-bs-target="#tambahAkun" data-id="<?= $account['id']; ?>"><i class="bi bi-pencil-square"></i></a>
-                            <a href="<?= BASEURL; ?>/account/delete/<?= $account['id']; ?>" class="badge bg-danger border-0 tombol-hapus" data-pesan="Deleting an account will delete all posts based on that account"><i class="bi bi-x-circle"></i></a>
+                            <a href="<?= BASEURL; ?>/account/update" class="badge bg-warning tampilModalUbahAkun" data-bs-toggle="modal" data-bs-target="#tambahAkun" data-id="<?= $account['ID_pegawai']; ?>"><i class="bi bi-pencil-square"></i></a>
+                            <a href="<?= BASEURL; ?>/account/delete/<?= $account['ID_pegawai']; ?>" class="badge bg-danger border-0 tombol-hapus" data-pesan="Deleting an account will delete all posts based on that account"><i class="bi bi-x-circle"></i></a>
                         </td>
                     </tr>
                     <?php $i++; ?>

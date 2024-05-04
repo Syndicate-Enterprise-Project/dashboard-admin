@@ -1,4 +1,4 @@
-<div class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark" style="width: 280px; min-height: 100vh;">
+<div class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark" style="width: 280px; height:100vh; position:sticky; top:0">
     <a href="<?= BASEURL; ?>/dashboard" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
         <span class="fs-4">Dashboard</span>
     </a>
@@ -17,7 +17,7 @@
             </a>
         </li>
         <li>
-            <a href="<?= BASEURL; ?>/dashboard/posts" class="nav-link <?= end(explode('/', $_SERVER['REQUEST_URI'])) == 'posts' ? 'active' : ''; ?> text-white">
+            <a href="<?= BASEURL; ?>/blog" class="nav-link <?= end(explode('/', $_SERVER['REQUEST_URI'])) == 'posts' ? 'active' : ''; ?> text-white">
                 <i class="bi bi-file-post me-2"></i>
                 Blog
             </a>
@@ -39,7 +39,7 @@
     <div class="dropdown">
         <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
             <i class="bi bi-person-circle mx-2"></i>
-            <strong><?= $_SESSION['user_auth']['username']; ?></strong>
+            <strong><?= $_SESSION['user_auth']['name']; ?></strong>
         </a>
         <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
             <li><a class="dropdown-item" href="<?= BASEURL; ?>">Novan Blog</a></li>

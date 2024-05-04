@@ -9,7 +9,7 @@ class Account extends Controller
     public function users_account()
     {
         $data['judul'] = "Users Account";
-        $data['accounts'] = $this->model('User_model')->getAllUser();
+        $data['accounts'] = $this->model('Pegawai_model')->getAllUser();
         $this->view('dashboard/layouts/header', $data);
         $this->view('dashboard/layouts/sidebar');
         $this->view('dashboard/account/user account', $data);
@@ -18,7 +18,7 @@ class Account extends Controller
 
     public function create()
     {
-        if ($this->model('User_model')->tambahUser($_POST) > 0) {
+        if ($this->model('Pegawai_model')->tambahUser($_POST) > 0) {
             Flasher::setFlash('Success', ' Create Account', 'success');
             header("Location: " . BASEURL . "/superadmin/users_account");
             exit;
@@ -32,7 +32,7 @@ class Account extends Controller
     public function delete($id)
     {
         if ($this->model('Post_model')->deleteUserPost($id) >= 0) {
-            if ($this->model('User_model')->deleteAccount($id) > 0) {
+            if ($this->model('Pegawai_model')->deleteAccount($id) > 0) {
                 Flasher::setFlash('Success', ' Account Deleted', 'success');
                 header("Location: " . BASEURL . "/superadmin/users_account");
                 exit;
@@ -50,7 +50,7 @@ class Account extends Controller
 
     public function update()
     {
-        if ($this->model('User_model')->changeAccount($_POST) > 0) {
+        if ($this->model('Pegawai_model')->changeAccount($_POST) > 0) {
             Flasher::setFlash('Success', ' Account Updated', 'success');
             header("Location: " . BASEURL . "/superadmin/users_account");
             exit;
@@ -63,6 +63,6 @@ class Account extends Controller
 
     public function getUbah()
     {
-        echo json_encode($this->model('User_model')->getUserById($_POST['id']));
+        echo json_encode($this->model('Pegawai_model')->getUserById($_POST['id']));
     }
 }

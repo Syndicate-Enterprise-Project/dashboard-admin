@@ -27,40 +27,6 @@ $(function () {
             }
         });
     });
-<<<<<<< HEAD
-=======
-    $(".tampilModalTambah").on("click", function () {
-        $("#judulModal").html("Create Category");
-        $(".modal-footer button[type=submit]").html("Create");
-        $("#name").val("");
-        $("#id").val("");
-        $(".modal-body form").attr(
-            "action",
-            "http://localhost/minpro%203/public/admin/create"
-        );
-    });
-    $(".tampilModalUbah").on("click", function () {
-        $("#judulModal").html("Change Category");
-        $(".modal-footer button[type=submit]").html("Update");
-        $(".modal-body form").attr(
-            "action",
-            "http://localhost/minpro%203/public/admin/category_edit"
-        );
-
-        const id = $(this).data("id");
-
-        $.ajax({
-            url: "http://localhost/minpro%203/public/admin/getUbah",
-            data: { id: id },
-            method: "post",
-            dataType: "json",
-            success: function (data) {
-                $("#name").val(data.name);
-                $("#id").val(data.id);
-            },
-        });
-    });
->>>>>>> 552b67389f2338092cbefe82d1af8844dc15537d
     $(".tampilModalTambahAkun").on("click", function () {
         $("#judulModal").html("Create Account");
         $(".modal-footer button[type=submit]").html("Create");
@@ -73,11 +39,7 @@ $(function () {
         $("#passwordDiv").show();
         $(".modal-body form").attr(
             "action",
-<<<<<<< HEAD
             "http://localhost/awdd/public/Account/create"
-=======
-            "http://localhost/minpro%203/public/superadmin/create"
->>>>>>> 552b67389f2338092cbefe82d1af8844dc15537d
         );
     });
     $(".tampilModalUbahAkun").on("click", function () {
@@ -88,20 +50,12 @@ $(function () {
         $("#id").val("");
         $(".modal-body form").attr(
             "action",
-<<<<<<< HEAD
             "http://localhost/awdd/public/Account/update"
-=======
-            "http://localhost/minpro%203/public/superadmin/update"
->>>>>>> 552b67389f2338092cbefe82d1af8844dc15537d
         );
         const id = $(this).data("id");
 
         $.ajax({
-<<<<<<< HEAD
             url: "http://localhost/awdd/public/Account/getUbah",
-=======
-            url: "http://localhost/minpro%203/public/superadmin/getUbah",
->>>>>>> 552b67389f2338092cbefe82d1af8844dc15537d
             data: { id: id },
             method: "post",
             dataType: "json",

@@ -20,7 +20,7 @@
             labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
             datasets: [{
                 label: '# of Votes',
-                data: [120, 19, 3, 5, 2, 3],
+                data: [30, 19, 3, 5, 2, 3],
                 borderWidth: 1
             }]
         },

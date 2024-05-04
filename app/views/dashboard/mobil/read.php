@@ -10,15 +10,11 @@ if (isset($_SESSION['flash'])) {
 
 <div class="d-flex flex-column w-100 mx-4">
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <?php if ($_SESSION['user_auth']['is_admin'] === 1 or $_SESSION['user_auth']['is_admin'] === 2) : ?>
-            <h1 class="h2">Daftar Mobil</h1>
-        <?php else : ?>
-            <h1 class="h2">Mobil</h1>
-        <?php endif; ?>
+        <h1 class="h2">Daftar Mobil</h1>
     </div>
 
     <div class="table-responsive small">
-        <a href="<?= BASEURL; ?>/dashboard/post_create" class="btn btn-primary mb-3">Tambah Mobil</a>
+        <a href="<?= BASEURL; ?>/mobil/mobil_create" class="btn btn-primary mb-3">Tambah Mobil</a>
         <table class="table table-striped table-sm">
             <thead>
                 <tr>
@@ -39,19 +35,28 @@ if (isset($_SESSION['flash'])) {
             </thead>
             <tbody>
                 <?php $i = 1; ?>
-                <!-- <?php foreach ($data['posts'] as $post) : ?> -->
-                    <tr>
-                        <td><?= $i; ?></td>
-                        <td><?= $post['title']; ?></td>
-                        <td><?= $post['category_name']; ?></td>
-                        <td class="text-center">
-                            <a href="<?= BASEURL; ?>/dashboard/post_show/<?= $post['id']; ?>" class="badge bg-info"><i class="bi bi-eye"></i></a>
-                            <a href="<?= BASEURL; ?>/dashboard/post_edit/<?= $post['id']; ?>" class="badge bg-warning"><i class="bi bi-pencil-square"></i></a>
-                            <a href="<?= BASEURL; ?>/dashboard/delete/<?= $post['id']; ?>" class="badge bg-danger border-0 tombol-hapus" data-pesan="delete this post"><i class="bi bi-x-circle"></i></a>
-                        </td>
-                    </tr>
-                    <?php $i++; ?>
-                <?php endforeach; ?>
+                <!-- <?php foreach ($data['mobil'] as $post) : ?> -->
+                <tr>
+                    <td><?= $i; ?></td>
+                    <td><?= $post['nama_mobil']; ?></td>
+                    <td><?= $post['tipe_mobil']; ?></td>
+                    <td><?= $post['tahun_mobil']; ?></td>
+                    <td><?= $post['mesin_mobil']; ?></td>
+                    <td><?= $post['transmisi_mobil']; ?></td>
+                    <td><?= $post['tenaga_mobil']; ?></td>
+                    <td><?= $post['bb_mobil']; ?></td>
+                    <td><?= $post['penggerak_mobil']; ?></td>
+                    <td><?= $post['warna_mobil']; ?></td>
+                    <td><?= $post['harga_mobil']; ?></td>
+                    <td><img style="width: 50px;" src="<?= BASEURL . "/img/upload/" . $post["gambar_mobil"] ?>" alt=""></td>
+                    <td class="text-center">
+                        <!-- <a href="<?= BASEURL; ?>/mobil/post_show/<?= $post['ID_mobil']; ?>" class="badge bg-info"><i class="bi bi-eye"></i></a> -->
+                        <a href="<?= BASEURL; ?>/mobil/post_edit/<?= $post['ID_mobil']; ?>" class="badge bg-warning"><i class="bi bi-pencil-square"></i></a>
+                        <a href="<?= BASEURL; ?>/mobil/delete/<?= $post['ID_mobil']; ?>" class="badge bg-danger border-0 tombol-hapus" data-pesan="delete this post"><i class="bi bi-x-circle"></i></a>
+                    </td>
+                </tr>
+                <?php $i++; ?>
+            <?php endforeach; ?>
             </tbody>
         </table>
     </div>

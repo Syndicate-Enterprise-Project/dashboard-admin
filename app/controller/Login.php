@@ -25,15 +25,13 @@ class Login extends Controller
             header('Location: ' . BASEURL . '/login');
             exit();
         }
-        $users = $this->model('User_model')->getAllUser();
+        $users = $this->model('Pegawai_model')->getAllUser();
         foreach ($users as $user) {
-            if ($_POST['email'] == $user['email'] && password_verify($_POST['password'], $user['password'])) {
+            if ($_POST['email'] == $user['email_pegawai'] && password_verify($_POST['password'], $user['password_pegawai'])) {
                 $_SESSION['user_auth'] = [
-                    'id' => $user['id'],
-                    'name' => $user['name'],
-                    'username' => $user['username'],
-                    'email' => $user['email'],
-                    'is_admin' => $user['is_admin']
+                    'id' => $user['ID_pegawai '],
+                    'name' => $user['nama_pegawai'],
+                    'email' => $user['email_pegawai'],
                 ];
                 Flasher::setFlash("Success", "Login", "success");
                 header('Location: ' . BASEURL . '/dashboard');
