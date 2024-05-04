@@ -16,20 +16,37 @@ class Mobil_model extends Controller
         return $this->db->resultSet();
     }
 
+    public function getMobilById($id)
+    {
+        $this->db->query("SELECT * FROM {$this->table} WHERE ID_mobil = $id");
+        $this->db->execute();
+        return $this->db->executeOneColumn();
+    }
+
     public function tambahMobil($data)
     {
-        // foreach ($data as $dt) {
-        //     if (empty($dt)) {
-        //         return $this->db->rowCount();
-        //     } else {
-        //         return $this->db->rowCount();
-        //     }
-        //     var_dump($dt);
-        // }
-        // exit;
         $data["image"] = !$_FILES['image']['name'] == '' ? $this->image_handler() : '';
         $this->db->query("INSERT INTO {$this->table} VALUES ('',?,?,?,?,?,?,?,?,?,?,?)");
         $this->db->bind([$data['nama'], $data['tipe'], $data['tahun'], $data['mesin'], $data['transmisi'], $data['tenaga'], $data['bb'], $data['penggerak'], $data['warna'], $data['harga'], $data['image']]);
+        $this->db->execute();
+        return $this->db->rowCount();
+    }
+
+    public function updateMobil($data)
+    {
+        $data['image'] = $_FILES['image']['name'] == '' ? $data['oldImage'] : $this->image_handler();
+        if ($data['image'] !== $data['oldImage']) {
+            unlink("C:/xampp/htdocs/awdd/public/img/upload/" . $data['oldImage']);
+        }
+        $this->db->query("UPDATE {$this->table} SET nama_mobil = ?, tipe_mobil = ?, tahun_mobil = ?, mesin_mobil = ?, transmisi_mobil = ?, tenaga_mobil = ?, bb_mobil = ?, penggerak_mobil = ?, warna_mobil = ?, harga_mobil = ?, gambar_mobil = ? WHERE ID_mobil = ?");
+        $this->db->bind([$data['nama'], $data['tipe'], $data['tahun'], $data['mesin'], $data['transmisi'], $data['tenaga'], $data['bb'], $data['penggerak'], $data['warna'], $data['harga'], $data['image'], $data['id']]);
+        $this->db->execute();
+        return $this->db->rowCount();
+    }
+
+    public function deleteMobil($id)
+    {
+        $this->db->query("DELETE FROM {$this->table} WHERE ID_mobil = $id");
         $this->db->execute();
         return $this->db->rowCount();
     }
@@ -45,15 +62,15 @@ class Mobil_model extends Controller
 
         if (!in_array($ektensiGambar, $ekstensiGambarValid)) {
             Flasher::setFlash("Failed", "Invalid image extension", "error");
-            return header('Location: ' . BASEURL . '/dashboard/posts');
+            return header('Location: ' . BASEURL . '/mobil');
         }
         if ($ukuranFile >= 5000000) {
             Flasher::setFlash("Failed", "Image size exceeds 5 mb", "error");
-            return header("Location: " . BASEURL . "/dashboard/posts");
+            return header("Location: " . BASEURL . "/mobil");
         }
 
         $namaFileBaru = uniqid() . "." . $ektensiGambar;
-        move_uploaded_file($locationfile, "C:/xampp/htdocs/minpro 3/public/img/upload/" . $namaFileBaru);
+        move_uploaded_file($locationfile, "C:/xampp/htdocs/awdd/public/img/upload/" . $namaFileBaru);
         return $namaFileBaru;
     }
 }

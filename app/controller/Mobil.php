@@ -32,4 +32,46 @@ class Mobil extends Controller
             exit;
         }
     }
+
+    public function mobil_edit($id)
+    {
+        $data['judul'] = 'Edit Mobil';
+        $data['selectbox'] = [
+            "tipe" => ['SUV Kecil', 'SUV Medium', 'SUV Besar'],
+            "transmisi" => ['CVT', 'DCT', 'Otomatis'],
+            "penggerak" => ['(4x2) FWD', '(4x2) RWD', '(4x4) AWD'],
+            "bb" => ['Bensin', 'Listrik', 'Hybrid']
+        ];
+        $data['mobil'] = $this->model('Mobil_model')->getMobilById($id);
+        $this->view('dashboard/layouts/header', $data);
+        $this->view('dashboard/layouts/sidebar');
+        $this->view('dashboard/Mobil/update', $data);
+        $this->view('templates/footer');
+    }
+
+    public function update()
+    {
+        if ($this->model("Mobil_model")->updateMobil($_POST) > 0) {
+            Flasher::setFlash('Success', 'Mobil Updated', 'success');
+            header("Location: " . BASEURL . "/mobil");
+            exit;
+        } else {
+            Flasher::setFlash('Failed', 'Update Mobil', 'danger');
+            header("Location: " . BASEURL . "/mobil");
+            exit;
+        }
+    }
+
+    public function delete($id)
+    {
+        if ($this->model("Mobil_model")->deleteMobil($id) > 0) {
+            Flasher::setFlash('Success', 'Post Deleted', 'success');
+            header("Location: " . BASEURL . "/mobil");
+            exit;
+        } else {
+            Flasher::setFlash('Failed', 'Delete Post', 'danger');
+            header("Location: " . BASEURL . "/mobil");
+            exit;
+        }
+    }
 }

@@ -17,7 +17,7 @@
             </a>
         </li>
         <li>
-            <a href="<?= BASEURL; ?>/blog" class="nav-link <?= end(explode('/', $_SERVER['REQUEST_URI'])) == 'posts' ? 'active' : ''; ?> text-white">
+            <a href="<?= BASEURL; ?>/blog" class="nav-link <?= end(explode('/', $_SERVER['REQUEST_URI'])) == 'blog' ? 'active' : ''; ?> text-white">
                 <i class="bi bi-file-post me-2"></i>
                 Blog
             </a>
