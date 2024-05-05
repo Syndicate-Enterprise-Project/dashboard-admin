@@ -6,13 +6,13 @@ class Account extends Controller
     //     Authenticate::superAdmin();
     // }
 
-    public function users_account()
+    public function account()
     {
-        $data['judul'] = "Users Account";
+        $data['judul'] = "Account";
         $data['accounts'] = $this->model('Pegawai_model')->getAllUser();
         $this->view('dashboard/layouts/header', $data);
         $this->view('dashboard/layouts/sidebar');
-        $this->view('dashboard/account/user account', $data);
+        $this->view('dashboard/account/account', $data);
         $this->view('templates/footer');
     }
 
@@ -20,30 +20,30 @@ class Account extends Controller
     {
         if ($this->model('Pegawai_model')->tambahUser($_POST) > 0) {
             Flasher::setFlash('Success', ' Create Account', 'success');
-            header("Location: " . BASEURL . "/superadmin/users_account");
+            header("Location: " . BASEURL . "/account/account");
             exit;
         } else {
             Flasher::setFlash('Failed', ' Create Account', 'error');
-            header("Location: " . BASEURL . "/superadmin/users_account");
+            header("Location: " . BASEURL . "/account/account");
             exit;
         }
     }
 
     public function delete($id)
     {
-        if ($this->model('Post_model')->deleteUserPost($id) >= 0) {
+        if ($this->model('Blog_model')->deletePegawaiPost($id) >= 0) {
             if ($this->model('Pegawai_model')->deleteAccount($id) > 0) {
                 Flasher::setFlash('Success', ' Account Deleted', 'success');
-                header("Location: " . BASEURL . "/superadmin/users_account");
+                header("Location: " . BASEURL . "/account/account");
                 exit;
             } else {
-                Flasher::setFlash('Failed', ' Delete Category', 'error');
-                header("Location: " . BASEURL . "/superadmin/users_account");
+                Flasher::setFlash('Failed', ' Delete Account', 'error');
+                header("Location: " . BASEURL . "/account/account");
                 exit;
             }
         } else {
-            Flasher::setFlash('Failed', ' Delete User Posts', 'error');
-            header("Location: " . BASEURL . "/superadmin/users_account");
+            Flasher::setFlash('Failed', ' Delete Pegawai Posts', 'error');
+            header("Location: " . BASEURL . "/account/account");
             exit;
         }
     }
@@ -52,11 +52,11 @@ class Account extends Controller
     {
         if ($this->model('Pegawai_model')->changeAccount($_POST) > 0) {
             Flasher::setFlash('Success', ' Account Updated', 'success');
-            header("Location: " . BASEURL . "/superadmin/users_account");
+            header("Location: " . BASEURL . "/account/account");
             exit;
         } else {
             Flasher::setFlash('Failed', ' Update Account', 'error');
-            header("Location: " . BASEURL . "/superadmin/users_account");
+            header("Location: " . BASEURL . "/account/account");
             exit;
         }
     }

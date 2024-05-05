@@ -8,7 +8,7 @@ if (isset($_SESSION['flash'])) {
 ?>
 <div class="flash-data" data-flashdata="<?= htmlspecialchars(json_encode($flashdata)); ?>"></div>
 
-<div class="d-flex flex-column w-100 mx-4">
+<div class="d-flex flex-column w-100 mx-4" style="margin-top: 5%;">
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1 class="h2">Daftar Mobil</h1>
     </div>

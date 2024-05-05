@@ -29,9 +29,9 @@ class Login extends Controller
         foreach ($users as $user) {
             if ($_POST['email'] == $user['email_pegawai'] && password_verify($_POST['password'], $user['password_pegawai'])) {
                 $_SESSION['user_auth'] = [
-                    'id' => $user['ID_pegawai '],
+                    'id' => $user['ID_pegawai'],
                     'name' => $user['nama_pegawai'],
-                    'email' => $user['email_pegawai'],
+                    'email' => $user['email_pegawai']
                 ];
                 Flasher::setFlash("Success", "Login", "success");
                 header('Location: ' . BASEURL . '/dashboard');

@@ -93,7 +93,6 @@ if (isset($_SESSION['flash'])) {
                 <input type="hidden" name="oldImage" value="<?= $data['mobil']['gambar_mobil']; ?>">
                 <?php if ($data['mobil']['gambar_mobil']) : ?>
                     <img src="<?= BASEURL; ?>/img/upload/<?= $data['mobil']['gambar_mobil']; ?>" alt="Not Found" class="col-sm-5 img-fluid d-block mb-3">
-                <?php else : ?>
                     <img class="img-fluid img-preview mb-3 col-sm-5">
                 <?php endif; ?>
                 <input class="form-control" type="file" id="image" name="image" onchange="previewImage()">

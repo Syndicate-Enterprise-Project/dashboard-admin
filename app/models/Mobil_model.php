@@ -1,5 +1,5 @@
 <?php
-class Mobil_model extends Controller
+class Mobil_model
 {
     private $db;
     private $table = 'mobil';
@@ -34,9 +34,13 @@ class Mobil_model extends Controller
 
     public function updateMobil($data)
     {
-        $data['image'] = $_FILES['image']['name'] == '' ? $data['oldImage'] : $this->image_handler();
-        if ($data['image'] !== $data['oldImage']) {
+        if (!empty($_FILES['image']['name'])) {
+            $newImage = $this->image_handler();
+            if (!$newImage) {
+                return false;
+            }
             unlink("C:/xampp/htdocs/awdd/public/img/upload/" . $data['oldImage']);
+            $data['image'] = $newImage;
         }
         $this->db->query("UPDATE {$this->table} SET nama_mobil = ?, tipe_mobil = ?, tahun_mobil = ?, mesin_mobil = ?, transmisi_mobil = ?, tenaga_mobil = ?, bb_mobil = ?, penggerak_mobil = ?, warna_mobil = ?, harga_mobil = ?, gambar_mobil = ? WHERE ID_mobil = ?");
         $this->db->bind([$data['nama'], $data['tipe'], $data['tahun'], $data['mesin'], $data['transmisi'], $data['tenaga'], $data['bb'], $data['penggerak'], $data['warna'], $data['harga'], $data['image'], $data['id']]);
@@ -64,7 +68,7 @@ class Mobil_model extends Controller
             Flasher::setFlash("Failed", "Invalid image extension", "error");
             return header('Location: ' . BASEURL . '/mobil');
         }
-        if ($ukuranFile >= 5000000) {
+        if ($ukuranFile >= 2000000) {
             Flasher::setFlash("Failed", "Image size exceeds 5 mb", "error");
             return header("Location: " . BASEURL . "/mobil");
         }

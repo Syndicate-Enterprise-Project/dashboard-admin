@@ -27,7 +27,7 @@ class Mobil extends Controller
             header("Location: " . BASEURL . "/mobil");
             exit;
         } else {
-            Flasher::setFlash('Failed', 'Upload Failed', 'danger');
+            Flasher::setFlash('Failed', 'Upload Failed', 'error');
             header("Location: " . BASEURL . "/mobil");
             exit;
         }
@@ -56,7 +56,7 @@ class Mobil extends Controller
             header("Location: " . BASEURL . "/mobil");
             exit;
         } else {
-            Flasher::setFlash('Failed', 'Update Mobil', 'danger');
+            Flasher::setFlash('Failed', 'Update Mobil', 'error');
             header("Location: " . BASEURL . "/mobil");
             exit;
         }
@@ -65,11 +65,11 @@ class Mobil extends Controller
     public function delete($id)
     {
         if ($this->model("Mobil_model")->deleteMobil($id) > 0) {
-            Flasher::setFlash('Success', 'Post Deleted', 'success');
+            Flasher::setFlash('Success', 'Mobil Deleted', 'success');
             header("Location: " . BASEURL . "/mobil");
             exit;
         } else {
-            Flasher::setFlash('Failed', 'Delete Post', 'danger');
+            Flasher::setFlash('Failed', 'Delete Mobil', 'error');
             header("Location: " . BASEURL . "/mobil");
             exit;
         }

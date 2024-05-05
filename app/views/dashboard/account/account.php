@@ -8,9 +8,9 @@ if (isset($_SESSION['flash'])) {
 ?>
 <div class="flash-data" data-flashdata="<?= htmlspecialchars(json_encode($flashdata)); ?>"></div>
 
-<div class="d-flex flex-column w-100 mx-4">
+<div class="d-flex flex-column w-100 mx-4" style="margin-top: 5%;">
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2">User Account</h1>
+        <h1 class="h2">Account</h1>
     </div>
 
     <div class="table-responsive col-md-8">
@@ -63,8 +63,8 @@ if (isset($_SESSION['flash'])) {
                         <input type="text" name="name" class="form-control" id="name" required>
                     </div>
                     <div class="mb-3">
-                        <label for="username" class="form-label">Username</label>
-                        <input type="text" name="username" class="form-control" id="username" required>
+                        <label for="phone" class="form-label">Phone Number</label>
+                        <input type="text" name="phone" class="form-control" id="phone" required>
                     </div>
                     <div class="mb-3">
                         <label for="email" class="form-label">Email</label>
@@ -74,12 +74,6 @@ if (isset($_SESSION['flash'])) {
                         <label for="password" class="form-label">Password</label>
                         <input type="password" name="password" class="form-control" id="password">
                     </div>
-                    <label for="role">Role</label>
-                    <select class="form-select" name="role" id="role">
-                        <option value="0">User</option>
-                        <option value="1">Admin</option>
-                        <option value="2">Super Admin</option>
-                    </select>
             </div>
             <div class="modal-footer account">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

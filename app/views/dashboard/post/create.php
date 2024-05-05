@@ -14,18 +14,18 @@ if (isset($_SESSION['flash'])) {
     </div>
 
     <div class="col-lg-8">
-        <form action="<?= BASEURL; ?>/dashboard/create" method="POST" enctype="multipart/form-data" onsubmit="return validateForm()">
-            <input type="hidden" name="user_id" value="<?= $_SESSION['user_auth']['id']; ?>">
+        <form action="<?= BASEURL; ?>/blog/create" method="POST" enctype="multipart/form-data" onsubmit="return validateForm()">
+            <input type="hidden" name="id" value="<?= $_SESSION['user_auth']['id']; ?>">
             <div class="mb-3">
-                <label for="title" class="form-label">Judul</label>
-                <input type="text" class="form-control " id="title" name="title" required autofocus>
+                <label for="judul" class="form-label">Judul</label>
+                <input type="text" class="form-control " id="judul" name="judul" required autofocus>
             </div>
             <div class="mb-3">
-                <label for="category" class="form-label">Kategori</label>
-                <select class="form-select" name="category_id">
-                    <?php foreach ($data['categories'] as $category) : ?>
-                        <option value="<?= $category['id']; ?>"><?= $category['name']; ?></option>
-                    <?php endforeach; ?>
+                <label for="kategori" class="form-label">Kategori</label>
+                <select class="form-select" name="kategori">
+                    <option value="Servis">Servis</option>
+                    <option value="Jenis Mobil">Jenis Mobil</option>
+                    <option value="Mesin">Mesin</option>
                 </select>
             </div>
             <div class="mb-3">
@@ -39,11 +39,6 @@ if (isset($_SESSION['flash'])) {
                 <trix-editor input="body"></trix-editor>
                 <div id="error-msg" style="color: red; display: none;">Isi Blog tidak boleh kosong!</div>
             </div>
-            <div class="mb-3">
-                <label for="tanggal" class="form-label">Tanggal</label>
-                <input type="date" id="tanggal" name="tanggal" class="form-control">
-            </div>
-
             <button type="submit" class="btn btn-primary mb-4">Buat Blog</button>
         </form>
     </div>

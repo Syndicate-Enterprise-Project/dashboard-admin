@@ -14,13 +14,32 @@ $(function () {
         const pesan = $(this).data("pesan");
 
         Swal.fire({
-            title: "Are you sure ?",
+            title: "Apakah Anda Yakin ?",
             text: pesan,
             icon: "warning",
             showCancelButton: true,
             confirmButtonColor: "#3085d6",
             cancelButtonColor: "#d33",
             confirmButtonText: "Delete",
+        }).then((result) => {
+            if (result.isConfirmed) {
+                document.location.href = href;
+            }
+        });
+    });
+    $(".tombol-logout").on("click", function (e) {
+        e.preventDefault();
+        const href = $(this).attr("href");
+        const pesan = $(this).data("pesan");
+
+        Swal.fire({
+            title: "Apakah Anda Yakin ?",
+            text: pesan,
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Logout",
         }).then((result) => {
             if (result.isConfirmed) {
                 document.location.href = href;
@@ -61,11 +80,10 @@ $(function () {
             dataType: "json",
             success: function (data) {
                 console.log(data);
-                $("#id").val(data.id);
-                $("#name").val(data.name);
-                $("#username").val(data.username);
-                $("#email").val(data.email);
-                $("#role").val(data.is_admin);
+                $("#id").val(data.ID_pegawai);
+                $("#name").val(data.nama_pegawai);
+                $("#phone").val(data.hp_pegawai);
+                $("#email").val(data.email_pegawai);
             },
         });
     });
