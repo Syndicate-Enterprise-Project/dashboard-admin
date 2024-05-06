@@ -33,6 +33,10 @@ class Login extends Controller
                     'name' => $user['nama_pegawai'],
                     'email' => $user['email_pegawai']
                 ];
+                if (isset($_POST['remember'])) {
+                    setcookie('id', $user['ID_pegawai'], time() + (7 * 24 * 60 * 60));
+                    setcookie('key', hash('sha1', $user['nama_pegawai']), time() + (7 * 24 * 60 * 60));
+                }
                 Flasher::setFlash("Success", "Login", "success");
                 header('Location: ' . BASEURL . '/dashboard');
                 exit();

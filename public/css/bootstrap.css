@@ -3890,11 +3890,7 @@ textarea.form-control-lg {
 .nav-pills {
   --bs-nav-pills-border-radius: var(--bs-border-radius);
   --bs-nav-pills-link-active-color: #fff;
-<<<<<<< HEAD
   --bs-nav-pills-link-active-bg: #d01818;
-=======
-  --bs-nav-pills-link-active-bg: #0d6efd;
->>>>>>> 552b67389f2338092cbefe82d1af8844dc15537d
 }
 .nav-pills .nav-link {
   border-radius: var(--bs-nav-pills-border-radius);

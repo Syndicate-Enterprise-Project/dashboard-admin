@@ -8,12 +8,12 @@ if (isset($_SESSION['flash'])) {
 ?>
 <div class="flash-data" data-flashdata="<?= htmlspecialchars(json_encode($flashdata)); ?>"></div>
 
-<div class="d-flex flex-column w-100 mx-4" style="margin-top: 5%;">
+<div class="d-flex flex-column w-100 mx-4" style="margin-top: 5rem;">
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1 class="h2">Daftar Mobil</h1>
     </div>
 
-    <div class="table-responsive small">
+    <div class="table-responsive small me-5">
         <a href="<?= BASEURL; ?>/mobil/mobil_create" class="btn btn-primary mb-3">Tambah Mobil</a>
         <table class="table table-striped table-sm">
             <thead>
@@ -50,7 +50,6 @@ if (isset($_SESSION['flash'])) {
                         <td><?= $post['harga_mobil']; ?></td>
                         <td><img style="width: 50px;" src="<?= BASEURL . "/img/upload/" . $post["gambar_mobil"] ?>" alt=""></td>
                         <td class="text-center">
-                            <a href="<?= BASEURL; ?>/mobil/mobil_show/<?= $post['ID_mobil']; ?>" class="badge bg-info"><i class="bi bi-eye"></i></a>
                             <a href="<?= BASEURL; ?>/mobil/mobil_edit/<?= $post['ID_mobil']; ?>" class="badge bg-warning"><i class="bi bi-pencil-square"></i></a>
                             <a href="<?= BASEURL; ?>/mobil/delete/<?= $post['ID_mobil']; ?>" class="badge bg-danger border-0 tombol-hapus" data-pesan="delete this post"><i class="bi bi-x-circle"></i></a>
                         </td>

@@ -8,14 +8,14 @@ if (isset($_SESSION['flash'])) {
 ?>
 <div class="flash-data" data-flashdata="<?= htmlspecialchars(json_encode($flashdata)); ?>"></div>
 
-<div class="d-flex flex-column w-100 mx-4" style="margin-top: 5%;">
+<div class="d-flex flex-column w-100 mx-4" style="margin-top: 5rem;">
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1 class="h2">Blog Post</h1>
     </div>
 
-    <div class="table-responsive small">
+    <div class="table-responsive small me-5">
         <a href="<?= BASEURL; ?>/blog/post_create" class="btn btn-primary mb-3">Tambah Blog</a>
-        <table class="table table-striped table-sm">
+        <table class="table table-striped table-md">
             <thead>
                 <tr>
                     <th scope="col">#</th>
@@ -36,7 +36,6 @@ if (isset($_SESSION['flash'])) {
                         <td><?= $post['isi_blog']; ?></td>
                         <td><?= $post['terbit_blog']; ?></td>
                         <td class="text-center">
-                            <a href="<?= BASEURL; ?>/blog/post_show/<?= $post['ID_blog']; ?>" class="badge bg-info"><i class="bi bi-eye"></i></a>
                             <a href="<?= BASEURL; ?>/blog/post_edit/<?= $post['ID_blog']; ?>" class="badge bg-warning"><i class="bi bi-pencil-square"></i></a>
                             <a href="<?= BASEURL; ?>/blog/delete/<?= $post['ID_blog']; ?>" class="badge bg-danger border-0 tombol-hapus" data-pesan="delete this post"><i class="bi bi-x-circle"></i></a>
                         </td>

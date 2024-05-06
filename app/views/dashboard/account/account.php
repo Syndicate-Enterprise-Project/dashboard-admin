@@ -8,12 +8,12 @@ if (isset($_SESSION['flash'])) {
 ?>
 <div class="flash-data" data-flashdata="<?= htmlspecialchars(json_encode($flashdata)); ?>"></div>
 
-<div class="d-flex flex-column w-100 mx-4" style="margin-top: 5%;">
+<div class="d-flex flex-column w-100 mx-4" style="margin-top: 5rem;">
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1 class="h2">Account</h1>
     </div>
 
-    <div class="table-responsive col-md-8">
+    <div class="table-responsive col-md-8 me-5">
         <button type="button" class="btn btn-primary mb-3 tampilModalTambahAkun" data-bs-toggle="modal" data-bs-target="#tambahAkun">
             Create New Account
         </button>
