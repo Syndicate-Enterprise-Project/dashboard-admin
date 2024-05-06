@@ -15,6 +15,7 @@ if (isset($_SESSION['flash'])) {
 
     <div class="table-responsive small me-5">
         <a href="<?= BASEURL; ?>/mobil/mobil_create" class="btn btn-primary mb-3">Tambah Mobil</a>
+        <a href="<?= BASEURL; ?>/mobil/csv" class="btn btn-primary mb-3">Download CSV</a>
         <table class="table table-striped table-sm">
             <thead>
                 <tr>

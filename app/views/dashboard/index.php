@@ -22,7 +22,7 @@ if (isset($_SESSION['flash'])) {
                 <div class="card text-center bg-danger text-light">
                     <i class="bi bi-car-front-fill" style="font-size: 5rem;"></i>
                     <div class="card-body">
-                        <h5 class="card-title fs-1">23</h5>
+                        <h5 class="card-title fs-1"><?= $data['mobil']; ?></h5>
                         <p class="card-text">Mobil</p>
                     </div>
                 </div>
@@ -31,7 +31,7 @@ if (isset($_SESSION['flash'])) {
                 <div class="card text-center bg-success text-light">
                     <i class="bi bi-newspaper" style="font-size: 5rem;"></i>
                     <div class="card-body">
-                        <h5 class="card-title fs-1">24</h5>
+                        <h5 class="card-title fs-1"><?= $data['blog']; ?></h5>
                         <p class="card-text">Blog</p>
                     </div>
                 </div>
@@ -40,7 +40,7 @@ if (isset($_SESSION['flash'])) {
                 <div class="card text-center bg-warning text-light">
                     <i class="bi bi-tools" style="font-size: 5rem;"></i>
                     <div class="card-body">
-                        <h5 class="card-title fs-1">47</h5>
+                        <h5 class="card-title fs-1"><?= $data['servis']; ?></h5>
                         <p class="card-text">Servis</p>
                     </div>
                 </div>

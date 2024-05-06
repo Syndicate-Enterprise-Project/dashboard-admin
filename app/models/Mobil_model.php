@@ -77,4 +77,25 @@ class Mobil_model
         move_uploaded_file($locationfile, "C:/xampp/htdocs/awdd/public/img/upload/" . $namaFileBaru);
         return $namaFileBaru;
     }
+
+    public function downloadCsv()
+    {
+        $datas = $this->getAllMobil();
+        $csv_file = "Daftar Mobil.csv";
+        header("Content-Type: text/csv");
+        header("Content-Disposition: attachment; filename=\"$csv_file\"");
+        $fh = fopen('php://output', 'w');
+        $is_column = true;
+        if (!empty($datas)) {
+            foreach ($datas as $data) {
+                if ($is_column) {
+                    fputcsv($fh, array_keys($data));
+                    $is_column = false;
+                }
+                fputcsv($fh, array_values($data));
+            }
+            fclose($fh);
+        }
+        exit;
+    }
 }

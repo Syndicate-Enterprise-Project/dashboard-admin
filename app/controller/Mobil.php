@@ -74,4 +74,10 @@ class Mobil extends Controller
             exit;
         }
     }
+
+    public function csv()
+    {
+        $this->model("Mobil_model")->downloadCsv();
+      
+    }
 }
