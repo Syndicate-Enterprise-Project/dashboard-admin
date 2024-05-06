@@ -7,7 +7,7 @@ if (isset($_SESSION['flash'])) {
 }
 ?>
 <div class="flash-data" style="" data-flashdata="<?= htmlspecialchars(json_encode($flashdata)); ?>"></div>
-<div style="background-image: url(<?= BASEURL; ?>/img/upload/login.jpg); background-size: cover; max-width: 100%; height: 100%;">
+<div style="background-image: url(<?= BASEURL; ?>/img/login.jpg); background-size: cover; max-width: 100%; height: 100%;">
     <div class="d-flex justify-content-center" style="padding-top: 10%; padding-bottom: 10%; min-height: 100vh;">
         <div class="card" style="width: 25rem; height: 25rem; background-color: rgb(254,251,246,0.5); backdrop-filter: blur(10px); ">
             <div class="card-body">
