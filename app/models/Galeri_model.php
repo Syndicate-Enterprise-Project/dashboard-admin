@@ -1,5 +1,8 @@
 <?php
+<<<<<<< HEAD
 
+=======
+>>>>>>> c976bcdd5cdeb1a638f8733afe5bf260142cde2b
 class Galeri_model
 {
     private $db;
@@ -17,6 +20,7 @@ class Galeri_model
         return $this->db->resultSet();
     }
 
+<<<<<<< HEAD
     public function getAllGaleriById($id)
     {
         $this->db->query("SELECT * FROM {$this->table} WHERE ID_galeri = $id");
@@ -24,6 +28,8 @@ class Galeri_model
         return $this->db->resultSet();
     }
 
+=======
+>>>>>>> c976bcdd5cdeb1a638f8733afe5bf260142cde2b
     public function tambahFoto($data)
     {
         $data["foto"] = $this->image_handler();
@@ -42,8 +48,11 @@ class Galeri_model
 
     public function deleteGaleri($id)
     {
+<<<<<<< HEAD
         $data = $this->getAllGaleriById($id);
         unlink("C:/xampp/htdocs/app3-admin/public/img/upload/" . $data['foto']);
+=======
+>>>>>>> c976bcdd5cdeb1a638f8733afe5bf260142cde2b
         $this->db->query("DELETE FROM galeri WHERE ID_galeri = $id");
         $this->db->execute();
         return $this->db->rowCount();
@@ -68,7 +77,11 @@ class Galeri_model
         }
 
         $namaFileBaru = uniqid() . "." . $ektensiGambar;
+<<<<<<< HEAD
         move_uploaded_file($locationfile, "C:/xampp/htdocs/app3-admin/public/img/upload/" . $namaFileBaru);
+=======
+        move_uploaded_file($locationfile, "C:/xampp/htdocs/awdd/public/img/upload/" . $namaFileBaru);
+>>>>>>> c976bcdd5cdeb1a638f8733afe5bf260142cde2b
         return $namaFileBaru;
     }
 }

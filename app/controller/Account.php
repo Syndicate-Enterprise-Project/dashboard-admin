@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
 
 class Account extends Controller
 {
@@ -6,6 +7,14 @@ class Account extends Controller
     {
         Authenticate::auth();
     }
+=======
+class Account extends Controller
+{
+    // public function __construct()
+    // {
+    //     Authenticate::superAdmin();
+    // }
+>>>>>>> c976bcdd5cdeb1a638f8733afe5bf260142cde2b
 
     public function account()
     {

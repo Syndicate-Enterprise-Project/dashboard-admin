@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
 
 class Mobil extends Controller
 {
@@ -7,6 +8,10 @@ class Mobil extends Controller
         Authenticate::auth();
     }
 
+=======
+class Mobil extends Controller
+{
+>>>>>>> c976bcdd5cdeb1a638f8733afe5bf260142cde2b
     public function index()
     {
         $data['judul'] = "Mobil";
@@ -84,5 +89,9 @@ class Mobil extends Controller
     public function csv()
     {
         $this->model("Mobil_model")->downloadCsv();
+<<<<<<< HEAD
+=======
+      
+>>>>>>> c976bcdd5cdeb1a638f8733afe5bf260142cde2b
     }
 }

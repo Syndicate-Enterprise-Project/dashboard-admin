@@ -1,5 +1,8 @@
 <?php
+<<<<<<< HEAD
 
+=======
+>>>>>>> c976bcdd5cdeb1a638f8733afe5bf260142cde2b
 class Penjualan_model
 {
     private $db;
@@ -16,6 +19,7 @@ class Penjualan_model
         $this->db->execute();
         return $this->db->resultSet();
     }
+<<<<<<< HEAD
 
     public function getAllPenjualanByMetode()
     {
@@ -50,4 +54,6 @@ class Penjualan_model
         }
         exit;
     }
+=======
+>>>>>>> c976bcdd5cdeb1a638f8733afe5bf260142cde2b
 }

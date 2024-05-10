@@ -44,8 +44,12 @@ if (isset($_SESSION['flash'])) {
             <div class="mb-3">
                 <label for="body" class="form-label">Body</label>
                 <input id="body" type="hidden" name="body" value="<?= $data['blogpost']['isi_blog']; ?>">
+<<<<<<< HEAD
                 <trix-editor input="body">
                 </trix-editor>
+=======
+                <trix-editor input="body"></trix-editor>
+>>>>>>> c976bcdd5cdeb1a638f8733afe5bf260142cde2b
                 <div id="error-msg" style="color: red; display: none;">Body tidak boleh kosong!</div>
             </div>
             <button type="submit" class="btn btn-primary mb-4">Update Post</button>

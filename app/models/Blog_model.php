@@ -1,5 +1,8 @@
 <?php
+<<<<<<< HEAD
 
+=======
+>>>>>>> c976bcdd5cdeb1a638f8733afe5bf260142cde2b
 class Blog_model
 {
     private $db;
@@ -40,7 +43,11 @@ class Blog_model
             if (!$newImage) {
                 return false;
             }
+<<<<<<< HEAD
             unlink("C:/xampp/htdocs/app3-admin-admin/public/img/upload/" . $data['oldImage']);
+=======
+            unlink("C:/xampp/htdocs/awdd/public/img/upload/" . $data['oldImage']);
+>>>>>>> c976bcdd5cdeb1a638f8733afe5bf260142cde2b
             $data['image'] = $newImage;
         }
         $this->db->query("UPDATE {$this->table} SET judul_blog = ?, kategori_blog = ?, isi_blog = ?, gambar_blog = ? WHERE ID_blog = ?");
@@ -48,16 +55,26 @@ class Blog_model
         $this->db->execute();
         return $this->db->rowCount();
     }
+<<<<<<< HEAD
     
     public function deletePost($id)
     {
         $data = $this->getPostById($id);
         unlink("C:/xampp/htdocs/app3-admin-admin/public/img/upload/" . $data['gambar_blog']);
+=======
+
+    public function deletePost($id)
+    {
+>>>>>>> c976bcdd5cdeb1a638f8733afe5bf260142cde2b
         $this->db->query("DELETE FROM {$this->table} WHERE ID_blog = $id");
         $this->db->execute();
         return $this->db->rowCount();
     }
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> c976bcdd5cdeb1a638f8733afe5bf260142cde2b
     public function deletePegawaiPost($id)
     {
         $this->db->query("DELETE FROM {$this->table} WHERE ID_pegawai = $id");
@@ -84,7 +101,11 @@ class Blog_model
         }
 
         $namaFileBaru = uniqid() . "." . $ektensiGambar;
+<<<<<<< HEAD
         move_uploaded_file($locationfile, "C:/xampp/htdocs/app3-admin/public/img/upload/" . $namaFileBaru);
+=======
+        move_uploaded_file($locationfile, "C:/xampp/htdocs/awdd/public/img/upload/" . $namaFileBaru);
+>>>>>>> c976bcdd5cdeb1a638f8733afe5bf260142cde2b
         return $namaFileBaru;
     }
 }

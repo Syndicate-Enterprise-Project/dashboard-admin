@@ -97,6 +97,7 @@ if (isset($_SESSION['flash'])) {
                 <?php endif; ?>
                 <input class="form-control" type="file" id="image" name="image" onchange="previewImage()">
             </div>
+<<<<<<< HEAD
             <div class="mb-3">
                 <label for="imageInt" class="form-label">Gambar Interior Mobil</label>
                 <input type="hidden" name="oldImageInt" value="<?= $data['mobil']['gambar_interior']; ?>">
@@ -115,6 +116,8 @@ if (isset($_SESSION['flash'])) {
                 <?php endif; ?>
                 <input class="form-control" type="file" id="imageEks" name="imageEks" onchange="previewImageEks()">
             </div>
+=======
+>>>>>>> c976bcdd5cdeb1a638f8733afe5bf260142cde2b
             <button type="submit" class="btn btn-primary mb-4">Ubah Mobil</button>
         </form>
     </div>

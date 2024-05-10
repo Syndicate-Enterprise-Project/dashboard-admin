@@ -8,7 +8,11 @@ if (isset($_SESSION['flash'])) {
 ?>
 <div class="flash-data" data-flashdata="<?= htmlspecialchars(json_encode($flashdata)); ?>"></div>
 
+<<<<<<< HEAD
 <div class="d-flex flex-column w-100 mx-4 mb-5" style="margin-top: 5%;">
+=======
+<div class="d-flex flex-column w-100 mx-4" style="margin-top: 5%;">
+>>>>>>> c976bcdd5cdeb1a638f8733afe5bf260142cde2b
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1 class="h2">Tambah Mobil</h1>
     </div>
@@ -73,6 +77,7 @@ if (isset($_SESSION['flash'])) {
                 </select>
             </div>
             <div class="mb-3">
+<<<<<<< HEAD
                 <label for="image" class="form-label">Gambar Mobil</label>
                 <img class="img-fluid img-preview mb-3 col-sm-5">
                 <input class="form-control" type="file" id="image" name="image" onchange="previewImage()">
@@ -87,6 +92,12 @@ if (isset($_SESSION['flash'])) {
                 <img class="img-fluid img-previewEks mb-3 col-sm-5">
                 <input class="form-control" type="file" id="imageEks" name="imageEks" onchange="previewImageEks()">
             </div>
+=======
+                <label for="image" class="form-label">Gambar</label>
+                <img class="img-fluid img-preview mb-3 col-sm-5">
+                <input class="form-control" type="file" id="image" name="image" onchange="previewImage()">
+            </div>
+>>>>>>> c976bcdd5cdeb1a638f8733afe5bf260142cde2b
             <button type="submit" class="btn btn-primary mb-4">Tambah Mobil</button>
         </form>
     </div>
@@ -110,6 +121,7 @@ if (isset($_SESSION['flash'])) {
             imgPreview.src = oFREvent.target.result;
         }
     }
+<<<<<<< HEAD
 
     function previewImageInt() {
         const image = document.querySelector('#imageInt');
@@ -138,4 +150,6 @@ if (isset($_SESSION['flash'])) {
             imgPreview.src = oFREvent.target.result;
         }
     }
+=======
+>>>>>>> c976bcdd5cdeb1a638f8733afe5bf260142cde2b
 </script>

@@ -9,6 +9,7 @@
             <div>
                 <a href="<?= BASEURL; ?>/dashboard" class="nav_logo">
                     <!-- <i class='bx bx-layer nav_logo-icon'></i> -->
+<<<<<<< HEAD
                     <img src="<?= BASEURL; ?>/img/logo.png" alt="logo" style="width: 40%;">
                     <!-- <span class="nav_logo-name">Admin</span> -->
                 </a>
@@ -39,6 +40,42 @@
                     </a>
                 </div>
             </div>
+=======
+                    <img src="<?= BASEURL; ?>/img/logo.png" alt="logo" style="width: 35%;">
+                    <!-- <span class="nav_logo-name">Admin</span> -->
+                </a>
+                <div class="nav_list">
+                    <a href="<?= BASEURL; ?>/dashboard" class="nav_link active">
+                        <i class='bx bx-grid-alt nav_icon'></i>
+                        <span class="nav_name">Home</span>
+                    </a>
+                    <a href="<?= BASEURL; ?>/statistik" class="nav_link">
+                        <i class='bx bx-bar-chart-alt-2 nav_icon'></i>
+                        <span class="nav_name">Statistik</span>
+                    </a>
+                    <a href="<?= BASEURL; ?>/blog" class="nav_link">
+                        <i class='bx bx-news nav_icon'></i>
+                        <span class="nav_name">Blog</span>
+                    </a>
+                    <a href="<?= BASEURL; ?>/mobil" class="nav_link">
+                        <i class='bx bx-car nav_icon'></i>
+                        <span class="nav_name">Mobil</span>
+                    </a>
+                    <a href="<?= BASEURL; ?>/galeri" class="nav_link">
+                        <i class='bx bx-folder nav_icon'></i>
+                        <span class="nav_name">Galeri</span>
+                    </a>
+                    <a href="<?= BASEURL; ?>/account/account" class="nav_link">
+                        <i class='bx bx-user nav_icon'></i>
+                        <span class="nav_name">Akun</span>
+                    </a>
+                </div>
+            </div>
+            <a href="<?= BASEURL; ?>/login/signout" class="nav_link tombol-logout" data-pesan="Ingin Logout">
+                <i class='bx bx-log-out nav_icon'></i>
+                <span class="nav_name">Keluar</span>
+            </a>
+>>>>>>> c976bcdd5cdeb1a638f8733afe5bf260142cde2b
         </nav>
     </div>
 
@@ -102,6 +139,9 @@
             if (homeLink.href === window.location.href) {
                 homeLink.classList.add('active');
             }
+<<<<<<< HEAD
 
+=======
+>>>>>>> c976bcdd5cdeb1a638f8733afe5bf260142cde2b
         });
     </script>

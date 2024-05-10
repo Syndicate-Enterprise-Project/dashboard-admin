@@ -14,7 +14,11 @@ $(function () {
         const pesan = $(this).data("pesan");
 
         Swal.fire({
+<<<<<<< HEAD
             title: "Apakah Anda yakin?",
+=======
+            title: "Apakah Anda Yakin ?",
+>>>>>>> c976bcdd5cdeb1a638f8733afe5bf260142cde2b
             text: pesan,
             icon: "warning",
             showCancelButton: true,
@@ -47,8 +51,13 @@ $(function () {
         });
     });
     $(".tampilModalTambahAkun").on("click", function () {
+<<<<<<< HEAD
         $("#judulModal").html("Tambah Akun");
         $(".modal-footer button[type=submit]").html("Tambah");
+=======
+        $("#judulModal").html("Create Account");
+        $(".modal-footer button[type=submit]").html("Create");
+>>>>>>> c976bcdd5cdeb1a638f8733afe5bf260142cde2b
         $("#id").val("");
         $("#name").val("");
         $("#username").val("");
@@ -58,23 +67,39 @@ $(function () {
         $("#passwordDiv").show();
         $(".modal-body form").attr(
             "action",
+<<<<<<< HEAD
             "http://admin.cherysamarinda.site//Account/create"
+=======
+            "http://localhost/awdd/public/Account/create"
+>>>>>>> c976bcdd5cdeb1a638f8733afe5bf260142cde2b
         );
     });
     $(".tampilModalUbahAkun").on("click", function () {
         $("#passwordDiv").hide();
+<<<<<<< HEAD
         $("#judulModal").html("Ganti Akun");
+=======
+        $("#judulModal").html("Change Account");
+>>>>>>> c976bcdd5cdeb1a638f8733afe5bf260142cde2b
         $(".modal-footer button[type=submit]").html("Change");
         $("#name").val("");
         $("#id").val("");
         $(".modal-body form").attr(
             "action",
+<<<<<<< HEAD
             "http://admin.cherysamarinda.site/Account/update"
+=======
+            "http://localhost/awdd/public/Account/update"
+>>>>>>> c976bcdd5cdeb1a638f8733afe5bf260142cde2b
         );
         const id = $(this).data("id");
 
         $.ajax({
+<<<<<<< HEAD
             url: "http://admin.cherysamarinda.site/Account/getUbah",
+=======
+            url: "http://localhost/awdd/public/Account/getUbah",
+>>>>>>> c976bcdd5cdeb1a638f8733afe5bf260142cde2b
             data: { id: id },
             method: "post",
             dataType: "json",

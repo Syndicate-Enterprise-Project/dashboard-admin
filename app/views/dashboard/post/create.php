@@ -8,7 +8,11 @@ if (isset($_SESSION['flash'])) {
 ?>
 <div class="flash-data" data-flashdata="<?= htmlspecialchars(json_encode($flashdata)); ?>"></div>
 
+<<<<<<< HEAD
 <div class="d-flex flex-column w-100 mx-4" style="margin-top: 5%;">
+=======
+<div class="d-flex flex-column w-100 mx-4">
+>>>>>>> c976bcdd5cdeb1a638f8733afe5bf260142cde2b
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1 class="h2">Buat Blog Baru</h1>
     </div>
@@ -23,10 +27,16 @@ if (isset($_SESSION['flash'])) {
             <div class="mb-3">
                 <label for="kategori" class="form-label">Kategori</label>
                 <select class="form-select" name="kategori">
+<<<<<<< HEAD
                     <option value="Artikel">Artikel</option>
                     <option value="Berita">Berita</option>
                     <option value="Promo">Promo</option>
                     <option value="Review">Review</option>
+=======
+                    <option value="Servis">Servis</option>
+                    <option value="Jenis Mobil">Jenis Mobil</option>
+                    <option value="Mesin">Mesin</option>
+>>>>>>> c976bcdd5cdeb1a638f8733afe5bf260142cde2b
                 </select>
             </div>
             <div class="mb-3">

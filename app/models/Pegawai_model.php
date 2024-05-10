@@ -1,5 +1,8 @@
 <?php
+<<<<<<< HEAD
 
+=======
+>>>>>>> c976bcdd5cdeb1a638f8733afe5bf260142cde2b
 class Pegawai_model
 {
     private $db;

@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
 
 class Blog extends Controller
 {
@@ -7,6 +8,10 @@ class Blog extends Controller
         Authenticate::auth();
     }
 
+=======
+class Blog extends Controller
+{
+>>>>>>> c976bcdd5cdeb1a638f8733afe5bf260142cde2b
     public function index()
     {
         $data['judul'] = "Posts";
@@ -39,10 +44,13 @@ class Blog extends Controller
     public function create()
     {
         if ($this->model("Blog_model")->tambahPost($_POST) > 0) {
+<<<<<<< HEAD
             $akunuser = $this->model("Langganan_model")->getAllLangganan();
             foreach ($akunuser as $akun) {
                 Mail::sendMail($akun['email_pelanggan']);
             }
+=======
+>>>>>>> c976bcdd5cdeb1a638f8733afe5bf260142cde2b
             Flasher::setFlash('Success', 'Post Uploaded', 'success');
             header("Location: " . BASEURL . "/blog");
             exit;
@@ -57,7 +65,11 @@ class Blog extends Controller
     {
         $data['judul'] = "Edit Post";
         $data['selectbox'] = [
+<<<<<<< HEAD
             'kategori' => ['Artikel', 'Berita', 'Promo', 'Review']
+=======
+            'kategori' => ['Servis', 'Jenis Mobil', 'Mesin']
+>>>>>>> c976bcdd5cdeb1a638f8733afe5bf260142cde2b
         ];
         $data['blogpost'] = $this->model('Blog_model')->getPostById($id);
         $this->view('dashboard/layouts/header', $data);

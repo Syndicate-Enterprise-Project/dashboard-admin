@@ -7,7 +7,11 @@
     --white-color: #f7f6fb;
     --body-font: "Nunito", sans-serif;
     --normal-font-size: 1rem;
+<<<<<<< HEAD
     --z-fixed: 10000;
+=======
+    --z-fixed: 100;
+>>>>>>> c976bcdd5cdeb1a638f8733afe5bf260142cde2b
 }
 *,
 ::before,
@@ -25,11 +29,14 @@ body {
 a {
     text-decoration: none;
 }
+<<<<<<< HEAD
 
 /* .nav_logo {
     display: none;
 } */
 
+=======
+>>>>>>> c976bcdd5cdeb1a638f8733afe5bf260142cde2b
 .header {
     width: 100%;
     height: var(--header-height);
@@ -113,7 +120,11 @@ a {
     left: 0;
 }
 .body-pd {
+<<<<<<< HEAD
     padding-left: calc(var(--nav-width));
+=======
+    padding-left: calc(var(--nav-width) + 1rem);
+>>>>>>> c976bcdd5cdeb1a638f8733afe5bf260142cde2b
 }
 .active {
     color: var(--white-color);
@@ -132,11 +143,19 @@ a {
 @media screen and (min-width: 768px) {
     body {
         margin: calc(var(--header-height) + 1rem) 0 0 0;
+<<<<<<< HEAD
         padding-left: 17rem;
     }
     .header {
         height: calc(var(--header-height) + 1rem);
         padding: 0 2rem 0 17rem;
+=======
+        padding-left: calc(var(--nav-width) + 2rem);
+    }
+    .header {
+        height: calc(var(--header-height) + 1rem);
+        padding: 0 2rem 0 calc(var(--nav-width) + 2rem);
+>>>>>>> c976bcdd5cdeb1a638f8733afe5bf260142cde2b
     }
     .header_img {
         width: 40px;
@@ -145,6 +164,7 @@ a {
     .header_img img {
         width: 45px;
     }
+<<<<<<< HEAD
 
     .header_toggle {
         display: none;
@@ -152,13 +172,33 @@ a {
 
     .l-navbar {
         width: 15rem;
+=======
+    .l-navbar {
+>>>>>>> c976bcdd5cdeb1a638f8733afe5bf260142cde2b
         left: 0;
         padding: 1rem 1rem 0 0;
     }
     .show {
+<<<<<<< HEAD
         width: 15rem;
     }
     .body-pd {
         padding-left: 15rem;
     }
 }
+=======
+        width: calc(var(--nav-width) + 156px);
+    }
+    .body-pd {
+        padding-left: calc(var(--nav-width) + 188px);
+    }
+}
+
+.nav_link {
+    text-decoration: none;
+}
+
+.nav_logo {
+    text-decoration: none;
+}
+>>>>>>> c976bcdd5cdeb1a638f8733afe5bf260142cde2b

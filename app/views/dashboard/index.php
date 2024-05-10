@@ -8,6 +8,7 @@ if (isset($_SESSION['flash'])) {
 ?>
 
 <div class="flash-data" data-flashdata="<?= htmlspecialchars(json_encode($flashdata)); ?>"></div>
+<<<<<<< HEAD
 <div class="nama-mobil-populer" data-mobil="<?= htmlspecialchars(json_encode($data['namamobil'])); ?>"></div>
 <div class="data-mobil-populer" data-mobil="<?= htmlspecialchars(json_encode(array_count_values($data['datamobil']))); ?>"></div>
 <div class="tipe-pembayaran" data-pembayaran="<?= htmlspecialchars(json_encode($data['tipepembayaran'])); ?>"></div>
@@ -142,12 +143,49 @@ if (isset($_SESSION['flash'])) {
                                 </span>
                             </div>
                         </div>
+=======
+
+<div class="d-flex flex-column w-100 h-100" style="margin-top: 5rem;">
+    <div class="container my-3">
+        <div class="text-start bg-bg-light rounded-3 my-3 mb-5">
+            <h1 class="text-body-emphasis">Selamat Datang, <?= $_SESSION['user_auth']['name']; ?></h1>
+            <p class="lead">
+                <!-- jangan lupa sholat -->
+            </p>
+        </div>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+                <div class="card text-center bg-danger text-light">
+                    <i class="bi bi-car-front-fill" style="font-size: 5rem;"></i>
+                    <div class="card-body">
+                        <h5 class="card-title fs-1"><?= $data['mobil']; ?></h5>
+                        <p class="card-text">Mobil</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card text-center bg-success text-light">
+                    <i class="bi bi-newspaper" style="font-size: 5rem;"></i>
+                    <div class="card-body">
+                        <h5 class="card-title fs-1"><?= $data['blog']; ?></h5>
+                        <p class="card-text">Blog</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card text-center bg-warning text-light">
+                    <i class="bi bi-tools" style="font-size: 5rem;"></i>
+                    <div class="card-body">
+                        <h5 class="card-title fs-1"><?= $data['servis']; ?></h5>
+                        <p class="card-text">Servis</p>
+>>>>>>> c976bcdd5cdeb1a638f8733afe5bf260142cde2b
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<<<<<<< HEAD
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="<?= BASEURL; ?>/js/jquery-3.7.1.min.js"></script>
@@ -214,3 +252,10 @@ if (isset($_SESSION['flash'])) {
         });
     }
 </script>
+=======
+</div>
+
+</div><!-- penutup d-flex header -->
+</div><!-- penutup container header -->
+</body>
+>>>>>>> c976bcdd5cdeb1a638f8733afe5bf260142cde2b

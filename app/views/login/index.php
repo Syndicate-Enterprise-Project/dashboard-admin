@@ -8,8 +8,13 @@ if (isset($_SESSION['flash'])) {
 ?>
 <div class="flash-data" style="" data-flashdata="<?= htmlspecialchars(json_encode($flashdata)); ?>"></div>
 <div style="background-image: url(<?= BASEURL; ?>/img/login.jpg); background-size: cover; max-width: 100%; height: 100%;">
+<<<<<<< HEAD
 <div class="" style="min-height: 100vh; display: flex; justify-content: center; align-items: center;" >
         <div class="card" style="width: 25rem; height: 25rem; background-color: rgb(254,251,246,0.5); backdrop-filter: blur(10px);">
+=======
+    <div class="d-flex justify-content-center" style="padding-top: 10%; padding-bottom: 10%; min-height: 100vh;">
+        <div class="card" style="width: 25rem; height: 25rem; background-color: rgb(254,251,246,0.5); backdrop-filter: blur(10px); ">
+>>>>>>> c976bcdd5cdeb1a638f8733afe5bf260142cde2b
             <div class="card-body">
                 <main class="form-signin">
                     <h1 class="h3 mb-5 text-center text-light">Login</h1>
@@ -22,12 +27,20 @@ if (isset($_SESSION['flash'])) {
                             <input type="password" name="password" class="form-control" id="password" placeholder="Password" required />
                             <label for="password">Password</label>
                         </div>
+<<<<<<< HEAD
                         <!-- <div class="form-check">
+=======
+                        <div class="form-check">
+>>>>>>> c976bcdd5cdeb1a638f8733afe5bf260142cde2b
                             <input class="form-check-input" type="checkbox" value="True" id="flexCheckDefault" name="remember">
                             <label class="form-check-label text-light" for="flexCheckDefault">
                                 Remember Me
                             </label>
+<<<<<<< HEAD
                         </div> -->
+=======
+                        </div>
+>>>>>>> c976bcdd5cdeb1a638f8733afe5bf260142cde2b
                         <button class="btn btn-danger w-100 py-2 mt-5" type="submit">
                             Login
                         </button>
